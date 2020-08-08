@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  h1 Web api list in Express js
+  ul
+    li
+        a(href="/api/getbooklist") Get List of books - GET
+        p {BasePath}/api/getbooklist
+     li
+        a(href="/api/createbooklist") Create Books records - POST
+        p {BasePath}/api/getbooklist
+     li
+        a(href="/api/updatebooklist") Update records with ID - POST
+        p {BasePath}/api/getbooklist
+     li
+        a(href="/api/deletebooklist") Delete records with ID - POST
+        p {BasePath}/api/getbooklist
+     li
+        a(href="/api/booknotification") Book Notification - GET
+        p {BasePath}/api/booknotification
+     li
+        a(href="/api/createbooknotification") Create Book Notification - POST
+        p {BasePath}/api/createbooknotification
+  hr
+  h3 Technologies Used:
+    ul
+      li 
+        p Angular 7
+      li 
+        p Express js
+      li 
+        p MongoDB Cloud version

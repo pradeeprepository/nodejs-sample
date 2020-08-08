@@ -1,0 +1,54 @@
+/* Add Global custome SCSS */
+@import '~@angular/material/theming';
+@include mat-core();
+// font-family  - pradeep
+// $custom-typography: mat-typography-config(
+//  $font-family: 'Roboto, Helvetica Neue,sans-serif',
+//   $headline: mat-typography-level(352px, 48px, 700),
+//   $body-1: mat-typography-level(165px, 254px, 5500)
+// );
+// Override typography for all Angular Material, including mat-base-typography and all components.
+// @include angular-material-typography($custom-typography);
+// Define the default theme (same as the example above).
+// default
+$sms-app-primary: mat-palette($mat-indigo);
+$sms-app-accent:  mat-palette($mat-pink, 200, 200, 300);
+$sms-app-theme:   mat-dark-theme($sms-app-primary, $sms-app-accent);
+
+.default-theme {
+  @include angular-material-theme($sms-app-theme);
+}
+// Include the default theme styles.
+  // @include angular-material-theme($sms-app-theme);
+// Define an alternate dark theme.
+$dark-primary: mat-palette($mat-blue);
+$dark-accent:  mat-palette($mat-red, A200, A100, A400);
+$dark-warn:    mat-palette($mat-deep-orange);
+$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+// Include the alternative theme styles inside of a block with a CSS class. You can make this
+// CSS class whatever you want. In this example, any component inside of an element with
+// `.unicorn-dark-theme` will be affected by this alternate dark theme instead of the default theme.
+.p-material-dark-theme {
+  // @include angular-material-theme($dark-theme);
+  color: $light-primary-text;
+  $dark-primary: mat-palette($mat-yellow);
+  $dark-accent: mat-palette($mat-amber, A400, A100, A700);
+  $dark-warn: mat-palette($mat-red);
+  $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+  @include angular-material-theme($dark-theme);
+  // @include component-themes($dark-theme);
+}
+
+
+// Light theme
+$light-primary: mat-palette($mat-grey, 200, 500, 300);
+$light-accent: mat-palette($mat-brown, 200);
+$light-warn: mat-palette($mat-deep-orange, 200);
+
+$light-theme: mat-light-theme($light-primary, $light-accent, $light-warn);
+
+.light-theme {
+  @include angular-material-theme($light-theme)
+}
